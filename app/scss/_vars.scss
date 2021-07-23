@@ -1,0 +1,82 @@
+$accent: #63a60f;
+$bages: #63A60E;
+$hover: #4d800c;
+$main: #121212;
+$gray: #505050;
+$white: #ffffff;
+$bg: #e5e5e5;
+$dark: #31352b;
+$red: #cf3E3b;
+$orange: #ff7A00;
+$yellow: #ffb800;
+
+
+
+%lato-400 {
+    font-family: "Lato-Regular", sans-serif;
+    font-weight: 400;
+}
+
+%lato-300 {
+    font-family: "Lato-Light", sans-serif;
+    font-weight: 300;
+}
+
+%lato-600 {
+    font-family: "Lato-Semibold", sans-serif;
+    font-weight: 600;
+}
+
+%lato-700 {
+    font-family: "Lato-Bold", sans-serif;
+    font-weight: 700;
+}
+
+%signika-400 {
+    font-family: "Signika-Regular", sans-serif;
+    font-weight: 400;
+}
+
+%signika-300 {
+    font-family: "Signika-Light", sans-serif;
+    font-weight: 300;
+}
+
+%signika-600 {
+    font-family: "Signika-SemiBold", sans-serif;
+    font-weight: 600;
+}
+
+%signika-700 {
+    font-family: "Signika-Bold", sans-serif;
+    font-weight: 700;
+}
+
+%background {
+    background-color: $dark;
+    color: $white;
+}
+
+
+ 
+%title {
+   @extend %signika-600;
+font-size: 32px;
+letter-spacing: 3%;
+text-transform: uppercase;
+color: $main;
+}
+
+%nav-item {
+    @extend %lato-700;
+font-size: 15px;
+letter-spacing: 1%;
+text-transform: uppercase;
+color: $gray;
+}
+
+%flex {
+    display: flex;
+    justify-content: space-between;
+}
+

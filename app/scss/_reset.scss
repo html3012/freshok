@@ -46,8 +46,14 @@ html{
   textarea,
   select {
     font: inherit;
+    border: transparent;
+    outline: transparent;
   }
   
   a {
     text-decoration: none;
+    color: inherit;
+  }
+  button {
+    cursor: pointer;
   }
