@@ -20,10 +20,6 @@
     padding: 72px 0;
 }
 
-.padding-in {
-    padding: 48px 0;
-}
-
 .logo {
     transition: transform 0.5s;
     display: inline-block;
@@ -40,6 +36,7 @@
 }
 
 .btn {
+    display: inline-block;
     @extend %lato-400;
     font-size: 18px;
     padding: 12px 24px;
@@ -51,6 +48,7 @@
 
 .header {
     letter-spacing: 3%;
+
     // .header__top
 
     &__top {
@@ -97,6 +95,7 @@
         @extend %flex;
         max-width: 845px;
         width: 100%;
+        height: 50px;
     }
 }
 
@@ -169,16 +168,12 @@
     &__select {
         max-width: 240px;
         width: 100%;
-        padding: 10px 10px 10px 60px;
+        padding: 5px 10px 5px 60px;
         color: $accent;
         border-radius: 6px;
         background-image: url("../img/icons/nav.svg");
         background-position: 17px;
         background-repeat: no-repeat;
-        transition: border 0.3s;
-        &:hover {
-            border: 1px solid $accent;
-        }
     }
 
     // .form__search
@@ -194,7 +189,7 @@
     &__input {
         max-width: 420px;
         width: 100%;
-        padding: 10px 10px 10px 50px;
+        padding: 5px 10px 5px 50px;
         color: $dark;
         background-image: url("../img/icons/search.svg");
         background-position: 12px;
@@ -213,12 +208,16 @@
         border-radius: 0px 6px 6px 0px;
         color: $white;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color, box-shadow 0.3s;
         &:hover {
             background-color: rgba(49, 53, 43, 0.85);
         }
         &:active {
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+            border-radius: 0px 6px 6px 0px;
         }
     }
 }
@@ -255,6 +254,11 @@
         &:active {
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
+        &:focus {
+            background-color: $bages;
+            box-shadow: 0px 0px 0px 4px #e0edcf;
+            border-radius: 3px;
+        }
     }
 
     // .user-nav__number
@@ -278,26 +282,29 @@
 // =====Slider=====
 
 .slider {
+
     &__item {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 100% cover;
         height: 600px;
     }
+
     &__content {
         height: 600px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
     &__info {
         width: 100%;
-        min-height: 236px ;
+        min-height: 236px;
         background: rgba(255, 255, 255, 0.8);
         border-radius: 6px;
         margin-bottom: 30px;
         padding: 24px;
-        overflow: auto;
+        overflow: hidden;
     }
 }
 
@@ -305,6 +312,7 @@
     &-slider {
         position: relative;
     }
+
     &-arrow {
         position: absolute;
         top: calc(50% - 30px);
@@ -314,6 +322,7 @@
         height: 60px;
         border: transparent;
     }
+
     &-prev {
         left: 60px;
         background-image: url("../img/icons/prev.svg");
@@ -325,6 +334,7 @@
             background-color: transparent;
         }
     }
+
     &-next {
         right: 60px;
         background-image: url("../img/icons/next.svg");
@@ -339,29 +349,19 @@
 }
 
 .slider {
-
-    // .slider__info
-
-    &__info {
-    }
-
-    // .slider__info--green
-
+    
     &__info--fresh {
         max-width: 775px;
     }
 
-    
     &__info--tomat {
         max-width: 825px;
     }
 
-    
     &__info--green {
         max-width: 885px;
     }
 }
-
 
 .slider {
     // .slider__title
@@ -398,9 +398,16 @@
         width: 100%;
         background-color: $accent;
         color: $white;
-        transition: background-color 0.3s ;
+        transition: background-color 0.3s;
         &:hover {
             background-color: $hover;
+        }
+        &:active {
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
         }
     }
 }
@@ -408,6 +415,9 @@
 // =====Advantages====
 
 .advantages {
+    padding: 48px 0;
+    background-color: $bg-500;
+
     // .advantages__items
 
     &__items {
@@ -471,11 +481,11 @@
     padding-top: 72px;
     text-align: center;
     background-color: $bg;
+
     // .top__nav
 
     &__nav {
-        display: flex;
-        justify-content: center;
+        margin-bottom: 33px;
     }
 
     &__title {
@@ -486,8 +496,8 @@
     // .top__item
 
     &__item {
-        &:not(:last-child) {
-            margin-right: 24px;
+        &:hover {
+            border-bottom: 3px solid rgba(99, 166, 14, 0.2);
         }
     }
 
@@ -502,7 +512,8 @@
 
     &__cards {
         display: flex;
-        margin: 0 -15px;
+        flex-wrap: wrap;
+        margin: 0 -15px 33px;
     }
 
     // .top__card
@@ -517,19 +528,33 @@
         flex-direction: column;
         justify-content: space-between;
         margin: 15px;
-        &:hover{
+        padding: 12px;
+        &:hover {
             border-color: $bages;
         }
     }
 
     &__btn {
-      color: $bages;
-background: $white;
-border: 1px solid $bages;
-transition: background-color 0.3s;
-&:hover {
-    background-color: #eff6e7;
+        color: $bages;
+        background: $white;
+        border: 1px solid $bages;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: #eff6e7;
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba(99, 166, 14, 0.5);
+            border-radius: 6px;
+        }
+        &:active {
+            box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
 }
+
+.mixitup-control {
+    &-active {
+        border-bottom: 3px solid rgba(99, 166, 14, 0.2);
     }
 }
 
@@ -538,7 +563,6 @@ transition: background-color 0.3s;
 
     &__top {
         @extend %flex;
-        padding: 12px;
         position: relative;
     }
 
@@ -548,7 +572,8 @@ transition: background-color 0.3s;
         display: flex;
         flex-direction: column;
         position: absolute;
-        left: 12px;
+        left: 0px;
+        z-index: 2;
     }
 
     // .card__favor
@@ -556,11 +581,21 @@ transition: background-color 0.3s;
     &__favor {
         background: transparent;
         position: absolute;
-        right: 12px;
-        z-index: 3;
-        transition: fill 0.3s;
+        right: 0px;
+        top: 5px;
+        z-index: 2;
+        path {
+            transition: fill 0.3s;
+        }
+        &:hover {
+            path {
+                fill: $yellow;
+            }
+        }
         &:active {
-            fill: $yellow;
+            path {
+                fill: $yellow;
+            }
         }
     }
 
@@ -577,28 +612,30 @@ transition: background-color 0.3s;
     &__img {
         width: 100%;
         height: auto;
-        // object-fit: cover;
+        object-fit: cover;
     }
 
     // .card__title
 
     &__title {
         letter-spacing: 3%;
-        align-self: start;
-        padding: 18px;
+        max-height: 60px;
+        padding: 0px 5px;
         font-size: 14px;
+        text-align: left;
     }
 
     // .card__bottom
 
     &__bottom {
-        padding: 18px;
+        padding: 0 6px;
         @extend %flex;
     }
 
     // .card__prices
 
     &__prices {
+        @extend %lato-400;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -608,6 +645,9 @@ transition: background-color 0.3s;
 
     &__cart {
         padding: 8px;
+        max-width: 32px;
+        width: 100%;
+        height: 32px;
         background-color: $bages;
         border-radius: 3px;
         transition: background-color 0.3s;
@@ -616,18 +656,20 @@ transition: background-color 0.3s;
         }
     }
 }
+
 .card {
     // .card__badge
 
     &__badge {
-        @extend %lato-700;  
+        display: none;
+        @extend %lato-700;
         font-size: 10px;
         line-height: 1;
         letter-spacing: 3%;
         color: $white;
         text-transform: uppercase;
-       border-radius: 6px;
-       padding: 3px 6px;
+        border-radius: 6px;
+        padding: 3px 6px;
         &:not(:last-child) {
             margin-bottom: 6px;
         }
@@ -636,49 +678,49 @@ transition: background-color 0.3s;
     // .card__badge--new
 
     &__badge--new {
+        display: block;
         background-color: $bages;
     }
 
     // .card__badge--sale
 
     &__badge--sale {
+        display: block;
         background-color: $red;
+        max-width: 37px;
+        width: 100%;
     }
 
     // .card__badge--hit
 
     &__badge--hit {
+        display: block;
         background-color: $orange;
+        max-width: 34px;
+        width: 100%;
     }
 }
 
-.prices {
-    // .prices__old
-
-    &__old {
-        @extend %lato-400;
-        line-height: 1;
-        letter-spacing: 3%;
-        color: #616161;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            transform: rotate(-15deg);
-            width: 45px;
-            height: 1px;
-            bottom: 7px;
-            background-color: #616161;
-        }
-    }
-
-    // .prices__new
-
-    &__new {
+.price--old {
+    @extend %lato-400;
+    line-height: 1;
+    letter-spacing: 3%;
+    color: #616161;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        transform: rotate(-10deg);
+        left: 0;
+        right: 0;
+        height: 1px;
+        bottom: 7px;
+        background-color: #616161;
     }
 }
 
 // =====Footer=====
+
 .footer {
     @extend %background;
     @extend %lato-400;
@@ -696,11 +738,6 @@ transition: background-color 0.3s;
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
-    }
-
-    // .footer__block
-
-    &__block {
     }
 
     // .footer__text
@@ -735,20 +772,23 @@ transition: background-color 0.3s;
     &__btn {
         max-width: 118px;
         width: 100%;
-        padding: 12px;
-        text-transform: uppercase;
         font-size: 12px;
         @extend %lato-700;
         background-color: $accent;
         border-radius: 0px 6px 6px 0px;
-        outline: transparent;
-        border: transparent;
         color: $white;
-        transition:  background-color 0.3s ;
-        &:hover{
+        transition: background-color 0.3s;
+        &:hover {
             background-color: $hover;
-
         }
+        &:active {
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+        }
+
     }
 
     // .footer__box
@@ -788,11 +828,6 @@ transition: background-color 0.3s;
         margin-right: 12px;
     }
 
-    // .footer__tel
-
-    &__tel {
-    }
-
     // .footer__addr
 
     &__addr {
@@ -811,11 +846,7 @@ transition: background-color 0.3s;
     // .footer__copy
 
     &__copy {
-    }
-
-    // .footer__cards
-
-    &__cards {
+        text-transform: uppercase;
     }
 
     // .footer__card
@@ -832,17 +863,13 @@ transition: background-color 0.3s;
 }
 
 .social {
-    // .social__links
-
-    &__links {
-    }
 
     // .social__link
 
     &__link {
         transition: opacity 0.3s;
         &:not(:last-child) {
-            margin-right: 12px;   
+            margin-right: 12px;
         }
         &:hover {
             opacity: 0.7;

@@ -5,6 +5,7 @@ $main: #121212;
 $gray: #505050;
 $white: #ffffff;
 $bg: #e5e5e5;
+$bg-500: #f6f6f6;
 $dark: #31352b;
 $red: #cf3E3b;
 $orange: #ff7A00;
@@ -73,10 +74,19 @@ font-size: 15px;
 letter-spacing: 1%;
 text-transform: uppercase;
 color: $gray;
+    &:not(:last-child) {
+     margin-right: 24px;
+    }
+}
+
+%nav-items {
+    display: flex;
+        justify-content: center;
 }
 
 %flex {
     display: flex;
     justify-content: space-between;
 }
+
 
