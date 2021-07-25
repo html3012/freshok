@@ -485,6 +485,7 @@
     // .top__nav
 
     &__nav {
+        @extend %nav-items;
         margin-bottom: 33px;
     }
 
