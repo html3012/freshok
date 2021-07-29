@@ -1,0 +1,142 @@
+.footer {
+    @extend %background;
+    @extend %lato-400;
+
+    &__top {
+        padding: 30px 0 42px;
+        border-bottom: 1px solid #464940;
+    }
+
+    &__inner {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text {
+        margin-bottom: 18px;
+        display: block;
+        line-height: 1;
+    }
+
+    &__form {
+        max-width: 300px;
+        width: 100%;
+        display: flex;
+    }
+
+    &__input {
+        max-width: 182px;
+        width: 100%;
+        padding: 12px;
+        color: #4f4f4f;
+        line-height: 1;
+        @extend %lato-400;
+        border-radius: 6px 0px 0px 6px;
+    }
+
+    &__btn {
+        max-width: 118px;
+        width: 100%;
+        font-size: 12px;
+        @extend %lato-700;
+        background-color: $green;
+        border-radius: 0px 6px 6px 0px;
+        color: $white;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: $green-900;
+        }
+        &:active {
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        &:focus {
+            background-color: $green-500;
+            box-shadow: 0px 0px 0px 4px $green-200;
+            border-radius: 6px;
+        }
+    }
+
+    &__nav {
+        max-width: 470px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__link {
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__contacts {
+        max-width: 210px;
+        width: 100%;
+        font-style: normal;
+    }
+
+    // &__address {
+    //     font-style: normal;
+    // }
+
+    &__hot-line {
+        margin-right: 12px;
+    }
+
+    &__addr {
+        display: inline-block;
+        margin-bottom: 18px;
+    }
+
+    &__bottom {
+        padding: 24px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__copy {
+        text-transform: uppercase;
+    }
+
+    &__cards {
+        display: flex;
+    }
+
+    &__card-item {
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
+    }
+    &__card {
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    // ======розміри
+    &__social-menu {
+        display: flex;
+    }
+
+    &__social-item {
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+    &__social-link {
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

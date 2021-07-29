@@ -1,0 +1,48 @@
+.advantages {
+    padding: 48px 0;
+    background-color: $white-700;
+
+    &__items {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        position: relative;
+        &:not(:last-child) {
+            margin-right: 122px;
+        }
+        &::before {
+            left: -75px;
+        }
+        &--deliver {
+            &::before {
+                content: url("../img/icons/scooter.svg");
+                position: absolute;
+            }
+        }
+
+        &--return {
+            &::before {
+                content: url("../img/icons/return-box.svg");
+                position: absolute;
+            }
+        }
+        &--support {
+            &::before {
+                position: absolute;
+                content: url("../img/icons/24-hours.svg");
+            }
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        color: $black-900;
+    }
+
+    &__text {
+        @extend %lato-400;
+        color: $gray;
+    }
+}

@@ -1,16 +1,21 @@
-$accent: #63a60f;
-$bages: #63A60E;
-$hover: #4d800c;
-$main: #121212;
-$gray: #505050;
-$white: #ffffff;
-$bg: #e5e5e5;
-$bg-500: #f6f6f6;
-$dark: #31352b;
-$red: #cf3E3b;
-$orange: #ff7A00;
-$yellow: #ffb800;
-
+$green:     #63a60f;
+$green-500: #63a60e;
+$green-900: #4d800c;
+$green-200: #e0edcf;
+$green-100: #eff6e7;
+$black:     #000000;
+$black-900: #121212;
+$black-500: #31352b;
+$gray:      #505050;
+$gray-900:  #616161;
+$silver:    #c1c1c1;
+$white:     #ffffff;
+$white-500: #e5e5e5;
+$white-700: #f6f6f6;
+$red:       #cf3E3b;
+$orange:    #ff7A00;
+$yellow:    #ffb800;
+$yellow-200:#ededcf;
 
 
 %lato-400 {
@@ -54,34 +59,8 @@ $yellow: #ffb800;
 }
 
 %background {
-    background-color: $dark;
+    background-color: $black-500;
     color: $white;
-}
-
-
- 
-%title {
-   @extend %signika-600;
-font-size: 32px;
-letter-spacing: 3%;
-text-transform: uppercase;
-color: $main;
-}
-
-%nav-item {
-    @extend %lato-700;
-font-size: 15px;
-letter-spacing: 1%;
-text-transform: uppercase;
-color: $gray;
-    &:not(:last-child) {
-     margin-right: 24px;
-    }
-}
-
-%nav-items {
-    display: flex;
-        justify-content: center;
 }
 
 %flex {
