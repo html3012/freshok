@@ -1,5 +1,5 @@
 .footer {
-    @extend %background;
+    @extend %bg;
     @extend %lato-400;
 
     &__top {
@@ -33,6 +33,10 @@
         line-height: 1;
         @extend %lato-400;
         border-radius: 6px 0px 0px 6px;
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-200;
+            border-radius: 6px;
+        }
     }
 
     &__btn {
@@ -40,21 +44,7 @@
         width: 100%;
         font-size: 12px;
         @extend %lato-700;
-        background-color: $green;
         border-radius: 0px 6px 6px 0px;
-        color: $white;
-        transition: background-color 0.3s;
-        &:hover {
-            background-color: $green-900;
-        }
-        &:active {
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        &:focus {
-            background-color: $green-500;
-            box-shadow: 0px 0px 0px 4px $green-200;
-            border-radius: 6px;
-        }
     }
 
     &__nav {
@@ -83,10 +73,6 @@
         font-style: normal;
     }
 
-    // &__address {
-    //     font-style: normal;
-    // }
-
     &__hot-line {
         margin-right: 12px;
     }
@@ -94,10 +80,16 @@
     &__addr {
         display: inline-block;
         margin-bottom: 18px;
+        &--tel {
+            transition: opacity 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
     }
 
     &__bottom {
-        padding: 24px 0;
+        padding: 13px 0;
         display: flex;
         justify-content: space-between;
     }
@@ -112,9 +104,10 @@
 
     &__card-item {
         &:not(:last-child) {
-            margin-right: 25px;
+            margin-right: 24px;
         }
     }
+
     &__card {
         transition: opacity 0.3s;
         &:hover {
@@ -122,7 +115,6 @@
         }
     }
 
-    // ======розміри
     &__social-menu {
         display: flex;
     }
@@ -132,11 +124,31 @@
             margin-right: 12px;
         }
     }
+
     &__social-link {
         transition: opacity 0.3s;
-
         &:hover {
             opacity: 0.7;
         }
+    }
+
+    &__social-icon {
+        max-width: 32px;
+        height: 32px;
+        fill: $white;
+    }
+
+    &__icon {
+        height: 29px;
+        fill: $white;       
+    }
+    .icon-visa {
+        max-width: 93px;
+        width: 100%;
+    }
+
+    .icon-master {
+        max-width: 49px;
+        width: 100%;
     }
 }

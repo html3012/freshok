@@ -21,9 +21,7 @@ function browsersync() {
 }
 
 function styles() {
-    return src(
-        'app/scss/style.scss',
-    )
+    return src('app/scss/style.scss')
         .pipe(scss({ outputStyle: 'compressed' }))
         .pipe(concat('style.min.css'))
         .pipe(autoPrefixer({
@@ -104,7 +102,7 @@ function cleanDist() {
 }
 
 function watching() {
-    watch(['app/scss**/*.scss'], styles);
+    watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', browserSync.reload);
     watch(['app/img/sprite/*.svg'], svgSprite);

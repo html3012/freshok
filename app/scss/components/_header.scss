@@ -2,7 +2,7 @@
     letter-spacing: 3%;
 
     &__top {
-        @extend %background;
+        @extend %bg;
         padding: 17px 0;
     }
 
@@ -28,6 +28,15 @@
     &__inner {
         @extend %flex;
         align-items: center;
+    }
+
+    &__dropdown {
+        position: relative;
+        display: inline-block;
+        transition: all 0.5s;
+        &:hover .header__dropdown-content {
+            display: block;
+        }
     }
 
     &__form {
@@ -59,13 +68,13 @@
 
         &--del {
             &::before {
-                content: url(../img/icons/address.svg);
+                content: url(../../img/icons/address.svg);
             }
         }
 
         &--tel {
             &::before {
-                content: url(../img/icons/tel.svg);
+                content: url(../../img/icons/tel.svg);
             }
         }
     }
@@ -86,26 +95,61 @@
     &__select {
         max-width: 240px;
         width: 100%;
-        padding: 5px 10px 5px 60px;
+        padding: 15px 40px 15px 60px;
         color: $green;
         border-radius: 6px;
-        background-image: url("../img/icons/nav.svg");
+        background-image: url("../../img/icons/nav.svg");
         background-position: 17px;
         background-repeat: no-repeat;
         appearance: none;
-        & option {
+        position: relative;
+        transition: all 0.5s;
+        &::after {
+            content: url("../../img/icons/arrow.svg");
+            position: absolute;
+            right: 18px;
+            transition: all 0.5s;
+        }
+        &:hover {
+            background-color: $green-200;
+            border-radius: 6px 6px 0 0;
+        }
+
+        &:hover::after {
+            transform: rotate(180deg);
+        }
+
+        &:active::after {
+            transform: rotate(180deg);
+        }
+        &:active .header__dropdown-content {
             display: block;
-            @extend %lato-400;
-            font-size: 16px;
-            line-height: 1.2;
-            letter-spacing: 0.03em;
-            color: $black;
-            padding: 15px 0 24px;
-            border-bottom: #ededed;
-            &:hover {
-                background-color: transparent;
-                color: $green;
-            }
+        }
+    }
+
+    &__dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: $white;
+        border: 1px solid $white-500;
+        border-radius: 0px 0px 6px 6px;
+        z-index: 1;
+        transition: all 0.5s;
+    }
+
+    &__dropdown-link {
+        display: block;
+        padding: 15px 83px 15px 20px;
+        @extend %lato-400;
+        font-size: 16px;
+        line-height: 1.2;
+        color: $black;
+        border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+        border-left: 3px solid transparent;
+        transition: color, border-left 0.3;
+        &:hover {
+            color: $green-500;
+            border-left: 3px solid $green-500;
         }
     }
 
@@ -120,10 +164,14 @@
         width: 100%;
         padding: 5px 10px 5px 50px;
         color: $black-500;
-        background-image: url("../img/icons/search.svg");
+        background-image: url("../../img/icons/search.svg");
         background-position: 12px;
         background-repeat: no-repeat;
         border-radius: 6px 0 0 6px;
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+        }
     }
 
     &__btn {
@@ -168,11 +216,10 @@
         text-align: center;
         align-items: center;
         border-radius: 3px;
-        transition: background-color, box-shadow 0.5s;
+        transition: all 0.5s;
 
         &:hover {
             background-color: $green-900;
-            border-radius: 3px;
         }
         &:active {
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -183,13 +230,10 @@
         }
     }
 
-    &__user-svg {
-        max-width: 32px;
-        width: 100%;
-        height: 25px;
+    &__icon {
         fill: $white;
     }
-
+    
     &__user-number {
         position: absolute;
         top: 0;
@@ -198,11 +242,19 @@
         background-color: $white;
         @extend %lato-600;
         font-size: 10px;
-        // width: 18px;
-        // height: 18px;
-        padding: 0px 3px;
+        width: 18px;
+        height: 18px;
         border-radius: 50%;
         text-align: center;
         line-height: 18px;
     }
+
+    .icon-user {
+        max-width: 25px;
+        width: 100%;
+        height: 32px;
+    }
+
+   
 }
+

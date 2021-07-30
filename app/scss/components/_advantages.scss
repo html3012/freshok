@@ -17,21 +17,21 @@
         }
         &--deliver {
             &::before {
-                content: url("../img/icons/scooter.svg");
+                content: url("../../img/icons/scooter.svg");
                 position: absolute;
             }
         }
 
         &--return {
             &::before {
-                content: url("../img/icons/return-box.svg");
+                content: url("../../img/icons/return-box.svg");
                 position: absolute;
             }
         }
         &--support {
             &::before {
                 position: absolute;
-                content: url("../img/icons/24-hours.svg");
+                content: url("../../img/icons/24-hours.svg");
             }
         }
     }

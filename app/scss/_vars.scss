@@ -58,14 +58,23 @@ $yellow-200:#ededcf;
     font-weight: 700;
 }
 
-%background {
+%bg {
     background-color: $black-500;
     color: $white;
+}
+
+%background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 %flex {
     display: flex;
     justify-content: space-between;
 }
+
+
+
 
 

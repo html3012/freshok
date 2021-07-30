@@ -5,7 +5,7 @@ $(function(){
         slidesToShow: 1,
         arrows: true,
         fade: true,
-        // autoplay: true,
+        autoplay: true,
     });
 
     $('.brends__items').slick({
@@ -13,7 +13,7 @@ $(function(){
         slidesToShow: 6,
         slidesToScroll: 1,
         arrows: false,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 1000,
       });
 
