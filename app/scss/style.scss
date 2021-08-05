@@ -2,14 +2,20 @@
 @import "reset";
 @import "libs";
 @import "vars";
+@import "mixin";
 @import "global";
 
 @import "components/header";
+@import "components/btn-burger";
+@import "components/menu";
+@import "components/basket";
 @import "components/slider-message";
 @import "components/advantages";
 @import "components/best-selling";
+@import "components/product-card";
 @import "components/baners";
 @import "components/promotion";
+@import "components/promotion-card";
 @import "components/brends";
 @import "components/news";
 @import "components/footer";

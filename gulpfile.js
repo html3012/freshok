@@ -9,11 +9,16 @@ const del = require('del');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
 const sprite = require('gulp-svg-sprite');
+const ssi    = require('browsersync-ssi');
 
 function browsersync() {
     browserSync.init({
         server: {
-            baseDir: 'app/'
+            baseDir: 'app/',
+        middleware: ssi({
+            baseDir: 'app/',
+            ext: '.html',
+          })
         },
         notify: false,
         online: true,

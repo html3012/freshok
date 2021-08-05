@@ -1,10 +1,6 @@
 .brends {
     background-color: $white-500;
 
-    &__items.slick-slider {
-        width: 110%;
-    }
-
     &__item {
         max-width: 80px;
         width: 100%;
@@ -14,7 +10,7 @@
         width: 100%;
         opacity: 0.5;
         transition: opacity 0.3s;
-        &:hover {
+        @include active {
             opacity: 1;
         }
     }

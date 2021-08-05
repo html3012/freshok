@@ -4,199 +4,70 @@
     background-color: $white-500;
 
     &__nav {
-        margin-bottom: 33px;
+        margin-bottom: 36px;
+        flex-wrap: wrap;
+        @include md {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__item {
+        @include md {
+            margin-bottom: 15px;
+        }
     }
 
     &__title {
-        margin-bottom: 32px;
-    }
-
-    &__category {
-        background-color: transparent;
+        margin-bottom: 35px;
+        @include sm {
+            margin-bottom: 24px;
+        }
     }
 
     &__products {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -15px 29px;
+        margin: 0 -15px 33px;
+        @include xl {
+            margin: 0 -10px 33px;
+        }
+        @include sm {
+            margin: 0 -3px 24px;
+        }
     }
 
     &__product {
         width: calc(100% / 4 - 30px);
         height: 410px;
         margin: 15px;
-    }
-
-    &__card {
-        display: block;
-        width: 100%;
-        height: 410px;
-        background: $white;
-        border: 1px solid rgba(17, 17, 17, 0.2);
-        border-radius: 6px;
-        display: flex;
-        flex-direction: column;
-        &:hover {
-            border-color: $green-500;
+        @include xl {
+            width: calc(100% / 4 - 20px);
+            margin: 10px;
+        }
+        @include lg {
+            width: calc(100% / 3 - 20px);
+        }
+        @include md {
+            width: calc(100% / 2 - 20px);
+        }
+        @include sm {
+            width: calc(100% / 2 - 6px);
+            margin: 3px;
+            height: 304px;
         }
     }
 
     &__btn {
-        display: inline-block;
-        @extend %lato-400;
-        font-size: 18px;
-        padding: 12px 24px;
-        border-radius: 6px;
         color: $green-500;
         background: $white;
         border: 1px solid $green-500;
         transition: background-color, box-shadow 0.3s;
-        &:hover {
-            background-color: $green-100;
-        }
-        &:focus {
-            box-shadow: 0px 0px 0px 4px rgba(99, 166, 14, 0.5);
-        }
+        @include hover($green-100);
         &:active {
             box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.1);
         }
-    }
-}
-
-.card {
-    &__top {
-        @extend %flex;
-        position: relative;
-        margin: 12px 12px 45px 12px;
-    }
-
-    &__badges {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        left: 0px;
-        z-index: 2;
-    }
-
-    &__favor {
-        background: transparent;
-        position: absolute;
-        right: -5px;
-        top: 5px;
-        z-index: 2;
-        
-    }
-
-    &__icon {
-        fill: $silver;
-        &:hover {
-            fill:$yellow;
-        }
-    }
-
-    &__image {
-        width: 100%;
-        height: 215px;
-    }
-
-    &__img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
-    &__title {
-        font-size: 14px;
-        text-align: left;
-        
-    }
-
-    &__bottom {
-        height: 100px;
-      margin: 18px; 
-       display: flex;
-       flex-direction: column;
-       justify-content: space-between;
-    }
-
-    &__bottom-inner {
-        @extend %flex;
-    }
-
-    &__prices {
-        @extend %lato-400;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &__cart {
-        padding: 8px;
-        max-width: 32px;
-        width: 100%;
-        height: 32px;
-        background-color: $green-500;
-        border-radius: 3px;
-        transition: background-color 0.3s;
-        &:hover {
-            background-color: $green-900;
-        }
-    }
-    
-&__picture {
-    max-width: 16px;
-    height: 16px;
-    fill: $white;
-}
-
-    &__badge {
-        display: none;
-        @extend %lato-700;
-        font-size: 10px;
-        line-height: 1;
-        letter-spacing: 3%;
-        color: $white;
-        text-transform: uppercase;
-        border-radius: 6px;
-        padding: 3px 6px;
-        &:not(:last-child) {
-            margin-bottom: 6px;
-        }
-        &--new {
-            display: block;
-            background-color: $green-500;
-        }
-
-        &--sale {
-            display: block;
-            background-color: $red;
-            max-width: 37px;
-            width: 100%;
-        }
-
-        &--hit {
-            display: block;
-            background-color: $orange;
-            max-width: 34px;
-            width: 100%;
-        }
-    }
-
-    &__price--old {
-        @extend %lato-400;
-        line-height: 1;
-        letter-spacing: 3%;
-        color: $gray-900;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            transform: rotate(-10deg);
-            left: 0;
-            right: 0;
-            height: 1px;
-            bottom: 7px;
-            background-color: $gray-900;
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba(99, 166, 14, 0.5);
         }
     }
 }

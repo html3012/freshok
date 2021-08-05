@@ -3,150 +3,42 @@
     text-align: center;
 
     &__title {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     &__nav {
-        margin-bottom: 32px;
-    }
-
-    &__category {
-        background-color: transparent;
+        margin-bottom: 33px;
     }
 
     &__cards {
         display: flex;
         flex-wrap: wrap;
         margin: 0 -15px 33px;
+        @include lg {
+            margin: 0 -14px 33px;
+        }
+        @include sm {
+            margin: 0 0 24px;
+        }
     }
 
-    &__card {
+    &__product {
         width: calc(100% / 4 - 30px);
-        height: 124px;
         margin: 15px;
-        padding: 13px 12px 11px;
-        background-color: $white;
-        display: flex;
-        position: relative;
-        border: 1px solid $silver;
-        border-radius: 6px;
-    }
-    
-    &__link {
-        max-width: 100px;
-        height: 100px;
-        margin-right: 12px;
-    }
-
-    &__picture {
-        max-width: 100px;
-        height: 100px;
-        object-fit: cover;
-    }
-
-    &__info {
-        max-width: 164px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: left;
-    }
-
-    &__name {
-        font-size: 14px;
-        color: $black-900;
-    }
-
-    &__stock {
-        display: none;
-        font-size: 10px;
-        line-height: 1;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-        &--is {
-            display: block;
-            color: $green-500;
+        @include xl {
+            width: calc(100% / 3 - 30px);
         }
-
-        &--end {
-            display: block;
-            color: $red;
+        @include lg {
+            width: calc(100% / 3 - 14px);
+            margin: 7px;
         }
-        &--none {
-            display: block;
-            color: $silver;
+        @include md {
+            width: calc(100% / 2 - 14px);
+            margin: 7px;
         }
-    }
-
-    &__box {
-        @extend %flex;
-    }
-
-    &__costs {
-        line-height: 1;
-    }
-
-    &__cost {
-        font-size: 20px;
-        color: $gray;
-        &--old {
-            font-size: 12px;
-            color: $silver;
-            position: relative;
-            &::before {
-                position: absolute;
-                content: "";
-                height: 1px;
-                background-color: $silver;
-                left: 0;
-                right: 0;
-                top: 6px;
-                transform: rotate(-15deg);
-            }
-        }
-    }
-
-    &__num {
-        color: $gray;
-        font-size: 14px;
-        line-height: 1;
-        @extend %lato-700;
-        position: relative;
-        margin-right: 18px;
-        &:after {
-            content: url("../../img/icons/star.svg");
-            position: absolute;
-            right: -18px;
-            
-        }
-    }
-
-    .category-new {
-        &::before {
-            content: "Новинка";
-            position: absolute;
-            font-size: 10px;
-            line-height: 1;
-            padding: 3px 6px;
-            color: $white;
-            background-color: $green;
-            border-radius: 6px;
-            text-transform: uppercase;
-        }
-    }
-
-    .category-hit {
-        &::before {
-            content: "Хіт";
-            position: absolute;
-            font-size: 10px;
-            line-height: 1;
-            padding: 3px 6px;
-            color: $white;
-            background-color: $orange;
-            border-radius: 6px;
-            text-transform: uppercase;
+        @include md {
+            width: 300px;
+            margin: 8px auto;
         }
     }
 }
