@@ -1,0 +1,122 @@
+.baners {
+    &__inner {
+        @extend %flex;
+
+        @include xxl {
+            justify-content: space-around;
+        }
+
+        @include lg {
+            flex-wrap: wrap;
+        }
+
+        @include md {
+            display: block;
+        }
+    }
+
+    &__item {
+        max-width: 300px;
+        width: 100%;
+        border-radius: 4px;
+
+        @include lg {
+            margin-bottom: 30px;
+            max-width: 369px;
+        }
+
+        @include md {
+            display: block;
+            max-width: 100%;
+        }
+
+        @include sm {
+            margin-bottom: 15px;
+        }
+        &--big {
+            max-width: 630px;
+            width: 100%;
+    
+            @include xxl {
+                max-width: 530px;
+                width: 100%;
+            }
+    
+            @include xl {
+                max-width: 300px;
+                width: 100%;
+            }
+    
+            @include lg {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
+        padding: 76px 0 76px 32px;
+        @extend %background;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-transform: uppercase;
+        color: $gray;
+        letter-spacing: normal;
+        &--big {
+            color: $white;
+        }
+    }
+
+    &__text {
+        max-width: 390px;
+        width: 100%;
+        margin-bottom: 18px;
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    &__title {
+        display: block;
+        max-width: 185px;
+        width: 100%;
+        margin-bottom: 12px;
+        @extend %signika-600;
+        font-size: 30px;
+        @include line-clamp(2);
+
+        @include md {
+            max-width: 395px;
+        }
+
+        @include sm {
+            font-size: 24px;
+            max-width: 227px;
+            margin-bottom: 75px;
+        }
+
+        &--big {
+            max-width: 395px;
+
+            @include sm {
+                max-width: 300px;
+            }
+        }
+    }
+
+    &__go {
+        max-width: 162px;
+        width: 100%;
+        border-bottom: 2px solid $gray;
+        font-size: 14px;
+        padding-bottom: 5px;
+        position: relative;
+        @include hovertext($green);
+
+        &--big {
+            border-bottom: 2px solid $white;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.advantages {
+    padding: 48px 0;
+    background-color: $white-700;
+    @include xxl {
+        padding: 40px 0;
+    }
+    @include lg {
+        padding: 30px 0;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        @include lg {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+
+    &__item {
+        position: relative;
+        margin: 0 61px;
+        @include lg {
+            &:not(:last-child) {
+                margin-bottom: 40px;
+                @include sm {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        @include md {
+            display: block;
+            width: 100%;
+            margin-right: 0;
+            margin-left: 74px;
+        }
+        &::before {
+            left: -74px;
+        }
+        &--deliver {
+            &::before {
+                content: url("../../img/icons/scooter.svg");
+                position: absolute;
+            }
+        }
+        &--return {
+            &::before {
+                content: url("../../img/icons/return-box.svg");
+                position: absolute;
+            }
+        }
+        &--support {
+            &::before {
+                position: absolute;
+                content: url("../../img/icons/24-hours.svg");
+            }
+        }
+    }
+    &__title {
+        font-size: 16px;
+        color: $black-900;
+    }
+    &__text {
+        @extend %lato-400;
+        color: $gray;
+    }
+}

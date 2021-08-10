@@ -1,0 +1,132 @@
+.promotion-card {
+    width: 100%;
+    padding: 13px 12px 11px;
+    background-color: $white;
+    display: flex;
+    position: relative;
+    border: 1px solid $silver;
+    border-radius: 6px;
+    position: relative;
+
+    &__link {
+        max-width: 100px;
+        height: 100px;
+        margin-right: 12px;
+        @include lg {
+            margin-right: 5px;
+        }
+        @include sm {
+            margin-right: 12px;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__info {
+        max-width: 164px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        @include md {
+            max-width: 220px;
+        }
+    }
+
+    &__name {
+        font-size: 14px;
+        color: $black-900;
+        @include line-clamp(3);
+    }
+
+    &__stock {
+        display: none;
+        font-size: 10px;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        &--is {
+            display: block;
+            color: $green-500;
+        }
+        &--end {
+            display: block;
+            color: $red;
+        }
+        &--none {
+            display: block;
+            color: $silver;
+        }
+    }
+
+    &__box {
+        @extend %flex;
+    }
+
+    &__costs {
+        line-height: 1;
+    }
+
+    &__cost {
+        font-size: 20px;
+        color: $gray;
+        @include md {
+            font-size: 14px;
+            margin-right: 12px;
+        }
+        &--old {
+            font-size: 12px;
+            color: $silver;
+            position: relative;
+            @include md {
+                font-size: 12px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                height: 1px;
+                background-color: $silver;
+                left: 0;
+                right: 0;
+                top: 6px;
+                transform: rotate(-15deg);
+            }
+        }
+    }
+
+    &__num {
+        color: $gray;
+        font-size: 14px;
+        line-height: 1;
+        @extend %lato-700;
+        position: relative;
+        margin-left: auto;
+        margin-right: 18px;
+        &:after {
+            content: url("../../img/icons/star.svg");
+            position: absolute;
+            right: -18px;
+        }
+    }
+
+    &__bage {
+        position: absolute;
+        font-size: 10px;
+        line-height: 1;
+        padding: 3px 6px;
+        color: $white;
+        border-radius: 6px;
+        text-transform: uppercase;
+        &--new {
+            background-color: $green;
+        }
+
+        &--hit {
+            background-color: $orange;
+        }
+    }
+}

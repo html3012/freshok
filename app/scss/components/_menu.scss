@@ -1,0 +1,175 @@
+.menu {
+    @extend %lato-400;
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateX(-200%);
+    background-color: $white;
+    z-index: 3;
+    width: 60%;
+    height: 100vh;
+    color: $black-500;
+    padding: 26px 0;
+    overflow: auto;
+
+    @include md {
+        width: 80%;
+    }
+
+    @include xs {
+        width: 90%;
+    }
+
+    &--active {
+        transform: translateX(0%);
+    }
+
+    &__top {
+        @extend %flex;
+        padding: 15px 26px 26px;
+        @include xs {
+            padding-right: 15px;
+        }
+    }
+
+    &__logo {
+        @extend %flex;
+        max-width: 200px;
+        width: 100%;
+        height: 60px;
+    }
+
+    &__img {
+        max-width: 54px;
+        width: 100%;
+    }
+
+    &__text {
+        max-width: 129px;
+        width: 100%;
+    }
+
+    &__close {
+        width: 30px;
+        height: 30px;
+        align-self: center;
+        background-color: transparent;
+
+        @include active {
+            background-color: $white-500;
+        }
+    }
+
+    &__image {
+        width: 18px;
+        height: 18px;
+    }
+
+    &__items {
+        padding-left: 30px;
+        margin: 24px 0;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+    }
+
+    &__user {
+        margin-bottom: 14px;
+        padding: 15px;
+        background-color: $green;
+        display: flex;
+        justify-content: start;
+        color: $white;
+        @extend %lato-400;
+        font-size: 18px;
+        line-height: 100%;
+        padding-left: 70px;
+    }
+
+    &__link {
+        text-transform: none;
+        padding-left: 10px;
+
+        &--enter {
+            position: relative;
+            padding-right: 10px;
+            border-right: 1px solid $white;
+            text-decoration: none;
+
+            &::before {
+                content: url("../../img/icons/user-link.svg");
+                position: absolute;
+                left: -35px;
+                transform: translateY(-25%);
+            }
+        }
+    }
+    .dropdown {
+        border-bottom: 1px solid $white-500;
+        width: 100%;
+        display: block;
+        margin-bottom: 24px;
+
+        &__select {
+            max-width: 100%;
+            background-image: url("../../img/icons/nav-icon.svg");
+            background-position: 30px;
+            text-align: left;
+            padding-left: 70px;
+            @extend %lato-600;
+            color: inherit;
+            font-size: 18px;
+            &:hover {
+                background-color: transparent;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            &__word {
+                display: inline-block;
+            }
+        }
+    }
+    .address {
+        margin-bottom: 18px;
+        margin-left: 30px;
+        &__addr {
+            max-width: 200px;
+            width: 100%;
+            padding-left: 40px;
+            display: block;
+            margin-bottom: 14px;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: url("../../img/icons/map.svg");
+                width: 24px;
+                height: 32px;
+                left: 0;
+            }
+            &--tel {
+                &::before {
+                    position: absolute;
+                    content: url("../../img/icons/icon-tel.svg");
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    .social-menu {
+        padding-left: 30px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $white-500;
+
+        &__icon {
+            fill: $black-500;
+        }
+    }
+}

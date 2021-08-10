@@ -1,0 +1,186 @@
+.catalog {
+    &__title {
+        @extend %signika-700;
+        font-size: 42px;
+        line-height: 120%;
+        margin: 48px 0;
+        
+        @include lg {
+            margin: 30px 0;
+            font-size: 36px;
+        }
+    }
+
+    &__inner {
+        @extend %flex;
+    }
+
+    &__filters {
+        background-color: $white-500;
+        @include md {
+            overflow: auto;
+            background-color: $white;
+            width: 75%;
+            transform: translateY(-200%);
+            position: absolute;
+            z-index: 3;
+        }
+        @include md {
+            width: 85%;
+        }
+        &--active {
+            transform: translateX(-4%);
+        }
+    }
+
+    &__close {
+        margin: 29px 20px 29px auto;
+        display: none;
+        background-color: transparent;
+        @include md {
+            display: block;
+        }
+    }
+
+    &__remove {
+        width: 18px;
+        height: 18px;
+    }
+
+    &__selects {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 35px;
+        @include md {
+            justify-content: start;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+
+        &--hidden {
+            display: none;
+        }
+
+        @include sm {
+            margin: 0 -6px;
+        }
+    }
+
+    &__item {
+        &--grid {
+            width: calc(100% / 3 - 30px);
+            margin: 15px 0 15px 30px;
+
+            @include lg {
+                width: calc(100% / 2 - 30px);
+            }
+
+            @include md {
+                width: calc(100% / 2 - 30px);
+                margin: 15px;
+            }
+
+            @include sm {
+                width: calc(100% / 2 - 12px);
+                margin: 6px;
+            }
+
+            @include xs {
+                width: 100%;
+                margin: 6px;
+            }
+        }
+
+        &--list {
+            width: calc(100% / 2 - 30px);
+            margin: 15px 0 15px 30px;
+            @include lg {
+                width: 80%;
+                margin: 15px auto;
+            }
+
+            @include sm {
+                width: 100%;
+                margin: 6px;
+            }
+        }
+    }
+
+    .product-card {
+
+        &__image {
+            position: relative;
+        }
+
+        &__plus {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            @extend %flex;
+            align-items: center;
+        }
+
+        .promotion-card__stock {
+            margin-bottom: 0;
+        }
+    }
+
+    &__bottom {
+        @extend %flex;
+        margin-bottom: 72px;
+
+        @include lg {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__button {
+        margin-left: 30px;
+
+        @include lg {
+            margin-bottom: 24px;
+        }
+
+        @include sm {
+            margin-top: 20px;
+        }
+    }
+
+    .promotion-card__inner {
+        @extend %flex;
+        align-items: baseline;
+    }
+
+    .card__inner {
+        @extend %flex;
+    }
+
+    .product-card__badges {
+        left: 12px;
+    }
+
+    .promotion-card__picture {
+        height: auto;
+    }
+
+    .promotion-card__link {
+        max-width: 200px;
+        height: 150px;
+        margin-right: 12px;
+    }
+
+    .promotion-card__info {
+        max-width: 100%;
+    }
+
+    .promotion-card__name {
+        max-width: 210px;
+        width: 100%;
+    }
+}

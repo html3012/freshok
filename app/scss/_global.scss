@@ -1,0 +1,158 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: $black-500;
+    @extend %lato-600;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: $white-500;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+.logo {
+    max-width: 200px;
+    width: 100%;
+    height: 60px;
+}
+
+.logo-leaf {
+    max-width: 36px;
+    width: 100%;
+    height: 40px;
+}
+
+.btn {
+    display: inline-block;
+    @extend %lato-400;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: $white;
+    background-color: $green;
+    transition: all 0.3s;
+    @include hover($green-900);
+    &:active {
+        background-color: $green-500;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &:focus {
+        background: $green-500;
+        box-shadow: 0px 0px 0px 4px $green-200;
+    }
+}
+
+.padding {
+    padding: 72px 0;
+    @include sm {
+        padding: 48px 0;
+    }
+}
+
+.title {
+    @extend %signika-600;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: $black-500;
+    @include md {
+        font-size: 28px;
+    }
+    @include sm {
+        font-size: 24px;
+    }
+}
+
+.mixitup-control {
+    &-active {
+        border-bottom: 3px solid rgba(99, 166, 14, 0.2);
+    }
+}
+
+.icon-cart {
+    width: 100%;
+    max-width: 32px;
+    height: 31px;
+}
+
+.icon-heart {
+    max-width: 32px;
+    width: 100%;
+    height: 28px;
+}
+
+.btn-burger {
+    display: none;
+    @include lg {
+        display: block;
+    }
+}
+
+.social-menu {
+    display: flex;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+    &__link {
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__icon {
+        max-width: 32px;
+        height: 32px;
+        fill: $white;
+    }
+}
+
+.address {
+    &__addr {
+        display: inline-block;
+        margin-bottom: 18px;
+        &--tel {
+            transition: opacity 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+
+

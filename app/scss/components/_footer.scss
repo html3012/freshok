@@ -1,0 +1,197 @@
+.footer {
+    @extend %bg;
+    @extend %lato-400;
+    &__top {
+        padding: 30px 0 42px;
+        border-bottom: 1px solid $gray-900;
+    }
+
+    &__inner {
+        margin-top: 30px;
+        @extend %flex;
+        @include lg {
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-top: 24px;
+        }
+    }
+
+    &__block {
+        @include lg {
+            padding: 24px 0;
+        }
+    }
+
+    &__text {
+        margin-bottom: 18px;
+        display: block;
+        line-height: 1;
+    }
+
+    &__form {
+        max-width: 300px;
+        width: 100%;
+        display: flex;
+        @include xl {
+            max-width: 250px;
+        }
+        @include lg {
+            max-width: 300px;
+        }
+    }
+
+    &__input {
+        max-width: 182px;
+        width: 100%;
+        padding: 12px;
+        color: #4f4f4f;
+        line-height: 1;
+        @extend %lato-400;
+        border-radius: 6px 0px 0px 6px;
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-200;
+            border-radius: 6px;
+        }
+    }
+
+    &__btn {
+        max-width: 118px;
+        width: 100%;
+        font-size: 12px;
+        @extend %lato-700;
+        border-radius: 0px 6px 6px 0px;
+    }
+
+    &__nav {
+        max-width: 470px;
+        width: 100%;
+        @include xl {
+            max-width: 380px;
+        }
+        @include lg {
+            padding: 24px 0;
+        }
+        @include sm {
+            max-width: 240px;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 38px;
+        @include sm {
+            grid-template-columns: repeat(2, auto);
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+        &:nth-child(2) {
+            grid-row: 2;
+            grid-column: 1;
+        }
+        &:nth-child(3) {
+            grid-row: 3;
+            grid-column: 1;
+        }
+        &:nth-child(5) {
+            grid-row: 2;
+            grid-column: 2;
+        }
+        &:nth-child(6) {
+            grid-row: 3;
+            grid-column: 2;
+        }
+        @include sm {
+            &:nth-child(4) {
+                grid-row: 4;
+                grid-column: 1;
+            }
+        }
+    }
+
+    &__link {
+        transition: opacity 0.3s;
+        @include active {
+            opacity: 0.7;
+        }
+    }
+
+    &__contacts {
+        max-width: 210px;
+        width: 100%;
+        font-style: normal;
+        position: relative;
+        @include lg {
+            padding-bottom: 24px;
+        }
+    }
+
+    &__bottom {
+        padding: 13px 0;
+        display: flex;
+        justify-content: space-between;
+        @include sm {
+            flex-direction: column-reverse;
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    &__copy {
+        text-transform: uppercase;
+    }
+
+    &__cards {
+        display: flex;
+        @include sm{
+            margin-bottom: 24px;
+        }
+    }
+
+    &__card-item {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+
+    &__card {
+        transition: opacity 0.3s;
+        @include active {
+            opacity: 0.7;
+        }
+    }
+
+    &__icon {
+        height: 29px;
+        fill: $white;
+    }
+
+}
+
+
+.icon-visa {
+    max-width: 93px;
+    width: 100%;
+}
+
+.icon-master {
+    max-width: 49px;
+    width: 100%;
+}
+
+.logo {
+    @include lg {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.address {
+    &__hot-line {
+        margin-right: 12px;
+    }
+}

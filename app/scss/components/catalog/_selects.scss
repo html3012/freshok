@@ -1,0 +1,111 @@
+.selects {
+    &__item {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    &__btn {
+        width: 47px;
+        height: 47px;
+
+        &--filter {
+            display: none;
+            @include md {
+                display: block;
+            }
+        }
+
+        &--active {
+            .selects__img {
+                fill: $green;
+            }
+        }
+    }
+
+    &__img {
+        width: 35px;
+        height: 35px;
+        fill: $silver;
+
+        &--grid {
+            width: 36px;
+            height: 34px;
+        }
+        &--filter {
+            fill: $green;
+        }
+    }
+
+    .btn-list,
+    .btn-grid {
+        @include sm {
+            display: none;
+        }
+    }
+
+    &__select {
+        @include xs {
+            display: none;
+        }
+    }
+
+    .jq-selectbox {
+        z-index: 2;
+    }
+
+    .jq-selectbox__select {
+        padding: 15px 49px 30px 15px;
+        border: 1px solid $silver;
+        border-radius: 3px;
+        @extend %lato-400;
+        font-size: 14px;
+        line-height: 1.2;
+        color: $gray;
+        background-color: $white;
+        outline: transparent;
+    }
+
+    .selects__select.focused {
+        border: 1px solid $silver;
+        box-shadow: 0px 0px 0px 3px $green-200;
+        background-color: $white;
+
+        .jq-selectbox__trigger-arrow {
+            background-image: url("../../../img/icons/arrow-upselect.svg");
+            background-repeat: no-repeat;
+            top: 20px;
+            right: 12px;
+            width: 16px;
+        }
+    }
+
+    .jq-selectbox.focused .jq-selectbox__select {
+        border: 1px solid $gray;
+        background-color: $white;
+    }
+
+    .jq-selectbox__trigger {
+        border-left: none;
+    }
+
+    .jq-selectbox__trigger-arrow {
+        position: absolute;
+        background-image: url("../../../img/icons/arrow-down.svg");
+        background-repeat: no-repeat;
+        top: 20px;
+        right: 12px;
+        width: 16px;
+        height: 10px;
+        border: none;
+    }
+
+    .jq-selectbox li.selected {
+        background-color: $white;
+        color: $gray;
+    }
+
+    .jq-selectbox li {
+        padding: 10px 10px 6px;
+    }
+}

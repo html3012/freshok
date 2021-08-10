@@ -1,0 +1,51 @@
+.pagination {
+    display: flex;
+    @include lg {
+        justify-content: center;
+    }
+
+    &__img {
+        width: 11px;
+        height: 18px;
+        fill: silver;
+
+        &--right {
+            fill: $gray;
+        }
+    }
+
+    &__item {
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        background-color: $white-700;
+        border: 1px solid transparent;
+        border-radius: 3px;
+
+        &:not(:last-child) {
+            margin-right: 6px;
+        }
+
+        &--active {
+            border-color: $gray;
+        }
+
+        &:hover {
+            border-color: $silver;
+        }
+
+        &:nth-child(3),
+        &:nth-child(5) {
+            @include sm {
+                display: none;
+            }
+        }
+    }
+
+    &__link {
+        padding: 15px;
+        line-height: 48px;
+        font-size: 18px;
+        color: $gray;
+    }
+}

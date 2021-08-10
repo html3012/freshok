@@ -1,0 +1,29 @@
+@import "fonts";
+@import "reset";
+// @import "libs";
+@import "vars";
+@import "mixin";
+@import "global";
+
+@import "components/header";
+@import "components/bem-block/btn-burger";
+@import "components/menu";
+@import "components/bem-block/dropdown";
+@import "components/basket";
+@import "components/bem-block/breadcrumbs";
+@import "components/home-page/slider-message";
+@import "components/advantages";
+@import "components/home-page/best-selling";
+@import "components/bem-block/filter-products";
+@import "components/bem-block/product-card";
+@import "components/home-page/baners";
+@import "components/home-page/promotion";
+@import "components/bem-block/promotion-card";
+@import "components/home-page/brends";
+@import "components/home-page/news";
+@import "components/footer";
+@import "components/catalog/catalog";
+@import "components/catalog/filter";
+@import "components/catalog/selects";
+@import "components/pagination";
+

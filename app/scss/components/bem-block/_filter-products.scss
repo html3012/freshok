@@ -1,0 +1,43 @@
+.filter-products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__item {
+        position: relative;
+        
+        &:not(:last-child) {
+            margin-right: 17px;
+        }
+
+        &:hover::after {
+            background-color: rgba(99, 166, 14, 0.2);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            height: 3px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: transparent;
+        }
+
+        @include md {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__btn {
+        background-color: transparent;
+        text-transform: uppercase;
+        @extend %lato-700;
+        font-size: 15px;
+        color: $gray;
+
+        @include sm {
+            font-size: 14px;
+        }
+    }
+}
