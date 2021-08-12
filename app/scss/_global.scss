@@ -1,6 +1,9 @@
 html,
 body {
     height: 100%;
+    .lock {
+        overflow-y: hidden;
+    }
 }
 
 body {
@@ -8,7 +11,7 @@ body {
     @extend %lato-600;
     font-size: 14px;
     line-height: 1.4;
-    background-color: $white-500;
+    background-color: $white;
 }
 
 .wrapper {
@@ -153,6 +156,3 @@ body {
         }
     }
 }
-
-
-

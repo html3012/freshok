@@ -10,9 +10,10 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(145, 224, 159, 0.5); 
-        z-index: 3; 
+        background-color:rgba(0, 0, 0, 0.5);; 
+        z-index: 5; 
         cursor: pointer; 
+        
     }
     &--active {
         &::before {
@@ -187,6 +188,7 @@
         background-position: 12px;
         background-repeat: no-repeat;
         border-radius: 6px 0 0 6px;
+
         &:focus {
             box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
             border-radius: 6px;
@@ -217,17 +219,21 @@
         cursor: pointer;
         transition: background-color, box-shadow 0.3s;
         @include hover(rgba(49, 53, 43, 0.85));
+
         &:active {
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
+
         &:focus {
             background-color: $black-500;
             box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.5);
         }
+
         @include xl {
             padding: 14px;
             max-width: 147px;
         }
+
         @include lg {
             max-width: 110px;
             padding: 15px 25px;
@@ -297,7 +303,6 @@
 
     &__icon {
         fill: $white;
-
         @include lg {
             max-width: 24px;
             width: 100%;

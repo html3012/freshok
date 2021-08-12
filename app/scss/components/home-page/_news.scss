@@ -1,6 +1,5 @@
 .news {
-    background-color: $white-500;
-    
+      
     &__inner {
         @extend %flex;
         align-items: flex-start;
@@ -20,7 +19,7 @@
 
     &__btn {
         display: inline-block;
-        height: 28px;
+        padding: 6px 0;
         font-size: 14px;
         line-height: 1;
         text-transform: uppercase;
@@ -81,7 +80,7 @@
         flex-direction: column;
         justify-content: center;
         width: 65px;
-        height: 76px;
+        padding: 9px 0;
         background-color: $white;
         border-radius: 0px 0px 4px 4px;
         text-align: center;

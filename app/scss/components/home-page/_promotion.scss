@@ -46,9 +46,14 @@
             margin: 7px;
         }
 
-        @include xs {
-            width: 80%;
+        @include sm {
+            width: 90%;
             margin: 7px auto;
+        }
+
+        @include sm {
+            width: 100%;
+           
         }
     }
 }
