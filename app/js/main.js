@@ -200,7 +200,7 @@ $(function () {
         },
     });
 
-    $('.product__image').on('click', function(){
+    $('.product__img').on('click', function(){
         $('.product__overlay').css('transform','scale(1)');
     });
 
