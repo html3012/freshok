@@ -7,6 +7,9 @@
     border: 1px solid $silver;
     border-radius: 6px;
     position: relative;
+    @include active {
+        border-color: $green-500;
+    }
 
     &__link {
         max-width: 100px;

@@ -2,21 +2,142 @@
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: minmax(max-content, max-content);
         column-gap: 30px;
         padding-bottom: 63px;
         border-bottom: 1px solid $silver;
+        
+        @include lg {
+            display: block;
+        }
     }
 
     &__image {
-        max-width: 630px;
-        width: 630px;
-        grid-row: span 2;
+        grid-row: 1 / 7;
         background: $white;
         border: 1px solid $silver;
         border-radius: 4px;
+        position: relative;
+        cursor: pointer;
+
+        @include lg {
+            margin-bottom: 30px;
+        }
+       
     }
 
+    
     &__slider {
+        max-width: 630px;
+        width: 100%;
+
+        @include xl {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        @include lg {
+            max-width: 100%;
+           
+        }
+    }
+
+    &__slider-popup {
+        width: 90%;
+
+        @include md {
+            width: 100%;
+        }
+      
+    }
+
+    &__slide {
+        width: 100%;
+        height: 558px;
+      
+        @include lg {
+            height: 480px;
+        }
+
+        @include md {
+            height: 420px;
+        }
+
+        @include sm {
+            height: 309px;
+        }
+    }
+
+    &__slide-popup {
+        width: 100%;
+        height: 750px;
+        max-height: 80vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+    }
+
+    &__overlay {
+        position: fixed;
+        transform: scale(0); 
+        width: 100%; 
+        height: 100%; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color:rgba(0, 0, 0, 0.5);; 
+        z-index: 15; 
+        cursor: pointer; 
+        transition: all 0.5s;
+    }
+
+    &__popup-content {
+        position: absolute;
+        display: flex;
+        width: 90vw;
+        height: 90vh;
+        top: 50%;
+        left: 50%;
+        border-radius: 15px;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        justify-content: center;
+        align-items: center;
+       
+        @include md {
+            width: 100vw;
+            height: 100vh;
+            border-radius: 0;
+        } 
+    }
+
+    &__popup-btn {
+        position: absolute;
+        top: 38px;
+        right: 38px;
+        max-width: 32px;
+        width: 100%;
+        height: 32px;
+        background-color: transparent;
+
+        @include sm{
+            top: 26px;
+            right: 26px;
+        }
+    }
+
+    &__icon {
+        max-width: 32px;
+        width: 100%;
+        height: 32px;
+        fill: $silver;
     }
 
     &__name {
@@ -25,21 +146,44 @@
         line-height: 1.2;
         grid-column: 2;
         color: $black;
-        margin-top: 22px;
+       margin-top: 18px;
+
+        @include lg {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        @include sm {
+            text-align: left;
+            font-size: 26px;
+        }
     }
 
-    &__case {
-        grid-column: 2;
+    &__del {
+        text-transform: uppercase;
+        @extend %signika-600;
+        font-size: 18px;
+        line-height: 1.2;
+        color: $black-900;
+        padding-bottom: 18px;
     }
 
     &__box {
         margin-bottom: 32px;
         display: flex;
+        align-items: flex-end;
     }
 
     &__inner {
         display: flex;
-        margin-bottom: 30px;
+        align-self: flex-start;
+        align-items: center;
+
+        @include lg {
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+        }
     }
 
     &__button {
@@ -47,7 +191,19 @@
         background-repeat: no-repeat;
         background-position: 12px center;
         background-size: 24px 23px;
-        padding: 12px 14px 12px 49px;
+        padding: 0 23px 0 49px;
+        font-size: 16px;
+        text-transform: uppercase;
+        height: 44px;
+        @include xl {
+            padding-right: 5px;
+        }
+    }
+
+    &__text-btn {
+        @include xl {
+            display: none;
+        }
     }
 
     &__subtitle {
@@ -60,7 +216,7 @@
     }
 
     &__items {
-        margin: 18px 0;
+        padding: 18px 0;
         font-size: 14px;
         line-height: 1.6;
         @extend %lato-400;
@@ -76,38 +232,26 @@
     }
 
     &__content {
-        margin: 50px 180px 20px 415px;
-    }
-
-    &__interesting {
-        margin-bottom: 72px;
-    }
-
-    &__title {
-        margin-bottom: 48px;
-        @extend %signika-600;
-        font-size: 30px;
-        line-height: 1.2;
-        text-transform: uppercase;
-        color: $black;
+        margin: 50px 180px 25px 415px;
     }
 
     &__code {
         font-size: 14px;
         line-height: 1.2;
         @extend %lato-400;
+        padding: 4px 5px;
         color: $silver;
         background-color: $white-700;
-        border-radius: 3px;  
-        margin-right: 12px;      
-    }
-
-    &__icon {
+        border-radius: 3px;
+        margin-right: 24px;
+        @include lg {
+           
+        }
     }
 
     &__prices {
-    margin-bottom: 60px;
-    margin-right: 18px;
+        margin-bottom: 40px;
+        margin-right: 18px;
     }
 
     &__price {
@@ -153,17 +297,24 @@
         padding: 14px;
         text-align: center;
         background-color: $green-100;
-    } 
+    }
+
+    &__badges-box {
+        align-self: center;
+
+        @include lg {
+            margin-bottom: 18px;
+        }
+    }
 
     &__badges {
         display: inline-block;
-        font-size: 10px;
+        font-size: 16px;
         line-height: 1;
         padding: 6px 9px;
         color: $white;
         border-radius: 6px;
         text-transform: uppercase;
-        margin-bottom: 18px;
         &--new {
             background-color: $green;
         }
@@ -172,67 +323,100 @@
             background-color: $orange;
         }
     }
-    .product-card__favor {
-        margin-left: auto;
-    }
 
-    .product__stock{
+    &__stock {
         display: none;
         text-transform: uppercase;
         margin-left: auto;
         font-size: 16px;
-            line-height: 1;
-            &--is {
-                display: block;
-                color: $green-500;
-            }
-    
-            &--end {
-                display: block;
-                color: $red;
-            }
-    
-            &--none {
-                display: block;
-                color: $silver;
+        line-height: 1;
+      
+        @include sm {
+            width: 250px;
+           margin: 18px 0 0 0;
+        }
+
+        &--is {
+            display: block;
+            color: $green-500;
+        }
+
+        &--end {
+            display: block;
+            color: $red;
+        }
+
+        &--none {
+            display: block;
+            color: $silver;
         }
     }
-        
-    .card__price--old {
-        @extend %lato-700;
-        font-size: 20px;
-        line-height: 1;
-        letter-spacing: 3%;
-        color: $gray-900;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            transform: rotate(-10deg);
-            left: 0;
-            right: 0;
-            height: 1px;
-            bottom: 7px;
-            background-color: $gray-900;
+
+    
+    &__slider .slick-arrow {
+        top: calc(50% - 70px);
+    }
+
+    &__slider .slick-prev {
+        left: 22px;
+    }
+
+    &__slider .slick-next {
+        right: 22px;
+    }
+
+    &__slider-popup .slick-arrow {
+        top: calc(50% - 70px);
+    }
+
+    &__slider-popup .slick-prev {
+        left: 0;
+    }
+
+    &__slider-popup .slick-next {
+        right: 0;
+    }
+
+    .card {
+        &__price {
+            &--old {
+                @extend %lato-700;
+                font-size: 20px;
+                line-height: 1;
+                letter-spacing: 3%;
+                color: $gray-900;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    transform: rotate(-10deg);
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    bottom: 7px;
+                    background-color: $gray-900;
+                }
+            }
         }
+    }
+
+    .product__box .product-card__icon.icon-heart {
+        max-width: 44px;
+        width: 100%;
+        height: 39px;
     }
 
     .breadcrumbs {
         margin-bottom: 48px;
+        @include sm {
+            margin-bottom: 30px;
+        }
     }
 
-    .basket__number {
-        display: inline-block;
-    }
-
-    .catalog__item {
-        max-width: 300px;
-        width: 100%;
-        height: 409px;
-    }
-
-    .product-card__plus {
-        @extend %flex;
+    .basket {
+        &__number {
+            display: inline-block;
+        }
     }
 
     .slick-slider {
@@ -250,15 +434,6 @@
         background-position: center;
     }
 
-    .product__slider .slick-arrow {
-        top: calc(50% - 30px);
-    }
-
-    .product__interesting .slick-arrow {
-        right: 0;
-        top: -80px;
-    }
-
     .slick-prev {
         background-image: url("../../../img/icons/prev.svg");
     }
@@ -267,31 +442,10 @@
         background-image: url("../../../img/icons/next.svg");
     }
 
-    .product__interesting .slick-prev {
-        right: 90px;
-    }
-
-    .product__interesting .slick-arrow {
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid $silver;
-        @include active {
-            background-color: $green-100;
-            box-shadow: 0px 0px 0px 4px $green-200;
-        }
-    }
-
-    .product__slider .slick-prev {
-        left: 22px;
-    }
-
-    .product__slider .slick-next {
-        right: 22px;
-    }
-
     .slick-dots {
         position: absolute;
         display: flex;
-        bottom: 16px;
+        bottom: 10%;
         right: calc(50% - 36px);
     }
 
@@ -302,20 +456,14 @@
 
     .slick-dots button {
         font-size: 0;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+        width: 14px;
+        height: 14px;
         background-color: $white;
-        @include sm {
-            width: 10px;
-            height: 10px;
-        }
+        border: 1px solid $silver;
+        border-radius: 50%;
     }
 
     li.slick-active button {
         background-color: $green;
     }
-
-    
-
 }

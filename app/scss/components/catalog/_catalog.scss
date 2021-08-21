@@ -1,11 +1,16 @@
 .catalog {
-    padding-top: 48px ;
+    padding-top: 48px;
+
+    @include lg {
+        padding-top: 0;
+    }
+
     &__title {
         @extend %signika-700;
         font-size: 42px;
         line-height: 1.2;
-        margin-bottom: 48px;
-        
+        margin-bottom: 50px;
+
         @include lg {
             margin: 30px 0;
             font-size: 36px;
@@ -14,50 +19,6 @@
 
     &__inner {
         @extend %flex;
-    }
-
-    &__filters {
-        background-color: $white;
-
-        @include md {
-            overflow: auto;
-            width: 75%;
-            transform: translateY(-200%);
-            position: absolute;
-            z-index: 5;
-        }
-        @include md {
-            width: 85%;
-        }
-        &--active {
-            transform: translateX(-4%);
-        }
-    }
-
-    &__close {
-        margin: 29px 20px 29px auto;
-        display: none;
-        background-color: transparent;
-
-        @include md {
-            display: block;
-        }
-    }
-
-    &__remove {
-        width: 18px;
-        height: 18px;
-    }
-
-    &__selects {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 35px;
-
-        @include md {
-            justify-content: start;
-            margin-bottom: 20px;
-        }
     }
 
     &__content {
@@ -78,6 +39,10 @@
         &--grid {
             width: calc(100% / 3 - 30px);
             margin: 15px 0 15px 30px;
+
+            @include active {
+                border-color: $green-500;
+            }
 
             @include lg {
                 width: calc(100% / 2 - 30px);
@@ -138,7 +103,6 @@
     }
 
     .product-card {
-
         &__image {
             position: relative;
         }
@@ -148,20 +112,16 @@
             width: 100%;
             bottom: 0;
             @extend %flex;
-            align-items: center;            
+            align-items: center;
         }
-
-        &__badges {
-            left: 12px;
-        }  
-       
     }
 
-    .promotion-card{
+    .promotion-card {
         &__inner {
             @extend %flex;
             align-items: baseline;
         }
+
         &__picture {
             height: auto;
         }
@@ -184,12 +144,9 @@
         &__stock {
             margin-bottom: 0;
         }
-
     }
-    
+
     .card__inner {
         @extend %flex;
     }
-
-   
 }

@@ -1,5 +1,5 @@
 .best-selling {
-    padding-top: 72px;
+    padding-top: 73px;
     text-align: center;
     
     &__nav {
@@ -34,6 +34,7 @@
     &__product {
         width: calc(100% / 4 - 30px);
         margin: 15px;
+        height: 409px;
         display: flex;
         flex-direction: column;
         

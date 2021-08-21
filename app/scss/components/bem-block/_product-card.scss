@@ -7,6 +7,7 @@
     border-radius: 6px;
     display: flex;
     flex-direction: column;
+
     @include active {
         border-color: $green-500;
     }
@@ -41,11 +42,12 @@
 
     &__image {
         width: 100%;
-        height: 215px;
-        margin-bottom: 15px;
+        margin-bottom: 28px;
+
         @include xl {
             height: 190px;
         }
+
         @include sm {
             height: 120px;
         }
@@ -86,10 +88,12 @@
         border-radius: 3px;
         transition: background-color 0.3s;
         @include hover($green-900);
+
         &:active {
             background-color: $green-500;
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
+
         &:focus {
             background: $green-500;
             box-shadow: 0px 0px 0px 4px $green-200;
@@ -116,16 +120,19 @@
         &:not(:last-child) {
             margin-bottom: 6px;
         }
+
         &--new {
             display: block;
             background-color: $green-500;
         }
+
         &--sale {
             display: block;
             background-color: $red;
             max-width: 37px;
             width: 100%;
         }
+
         &--hit {
             display: block;
             background-color: $orange;
@@ -134,21 +141,23 @@
         }
     }
 
-    &__price--old {
-        @extend %lato-400;
-        line-height: 1;
-        letter-spacing: 3%;
-        color: $gray-900;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            transform: rotate(-10deg);
-            left: 0;
-            right: 0;
-            height: 1px;
-            bottom: 7px;
-            background-color: $gray-900;
+    &__price {
+        &--old {
+            @extend %lato-400;
+            line-height: 1;
+            letter-spacing: 3%;
+            color: $gray-900;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                transform: rotate(-10deg);
+                left: 0;
+                right: 0;
+                height: 1px;
+                bottom: 7px;
+                background-color: $gray-900;
+            }
         }
     }
 }

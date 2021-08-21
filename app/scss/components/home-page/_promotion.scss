@@ -17,10 +17,10 @@
     &__cards {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -15px 33px;
+        margin: 0 -15px 30px -15px;
 
         @include lg {
-            margin: 0 -14px 33px;
+            margin: 0 -14px 30px;
         }
 
         @include sm {

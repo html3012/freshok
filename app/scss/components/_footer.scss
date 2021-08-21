@@ -96,7 +96,7 @@
     &__items {
         display: grid;
         grid-template-columns: repeat(3, auto);
-        column-gap: 38px;
+        justify-content: space-between;
         @include sm {
             grid-template-columns: repeat(2, auto);
         }

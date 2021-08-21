@@ -1,17 +1,62 @@
 .filter {
-    width: 300px;
-
-    @include lg {
-        width: 260px;
-    }
-
+    background-color: $white;
+        
     @include md {
-        width: 300px;
+        overflow-y:  auto;
+        width: 75%;
+        height: calc(100vh - 128px);
+        transform: translateY(-200%);
+        position: absolute;
+        z-index: 5;
+        top: 128px;
     }
 
     @include sm {
-        max-width: 300px;
-        width: 100%;
+        width: 85%;
+    }
+
+    &--active {
+        transform: translateX(-6%);
+    }
+
+    &__items{
+        width: 300px;
+        overflow: auto;
+    
+        @include lg {
+            width: 260px;
+        }
+    
+        @include md {
+            width: 300px;
+            padding-left: 40px;
+        }
+    
+        @include sm {
+            max-width: 300px;
+            width: 100%;
+            padding-left: 15px;
+        }
+    
+        @include xs {
+            padding-left: 5px;
+        }
+    }
+    
+
+    &__close {
+        margin: 29px 20px 29px auto;
+        display: none;
+        background-color: transparent;
+
+        @include md {
+            display: block;
+        }
+    }
+
+    &__remove {
+        width: 18px;
+        height: 18px;
     }
 
     &__categories {
@@ -19,6 +64,7 @@
         background-color: $white;
         border: 1px solid $silver;
         margin-bottom: 30px;
+
         &--open {
             .filter{
                 &__content {
@@ -26,7 +72,7 @@
                 }
             }
            
-            .filter__name{
+            .filter__name {
                 &::after {
                     transform: rotate(180deg);
                 }
@@ -69,6 +115,13 @@
 
         &:not(:last-child) {
             margin-bottom: 12px;
+        }
+    }
+
+    &__link {
+        @include hovertext ($green);
+        &__active {
+            color: $green;
         }
     }
 
