@@ -1,10 +1,16 @@
 .catalog {
+    padding-top: 48px;
+
+    @include lg {
+        padding-top: 0;
+    }
+
     &__title {
         @extend %signika-700;
         font-size: 42px;
-        line-height: 120%;
-        margin: 48px 0;
-        
+        line-height: 1.2;
+        margin-bottom: 50px;
+
         @include lg {
             margin: 30px 0;
             font-size: 36px;
@@ -13,48 +19,6 @@
 
     &__inner {
         @extend %flex;
-    }
-
-    &__filters {
-        background-color: $white-500;
-        @include md {
-            overflow: auto;
-            background-color: $white;
-            width: 75%;
-            transform: translateY(-200%);
-            position: absolute;
-            z-index: 3;
-        }
-        @include md {
-            width: 85%;
-        }
-        &--active {
-            transform: translateX(-4%);
-        }
-    }
-
-    &__close {
-        margin: 29px 20px 29px auto;
-        display: none;
-        background-color: transparent;
-        @include md {
-            display: block;
-        }
-    }
-
-    &__remove {
-        width: 18px;
-        height: 18px;
-    }
-
-    &__selects {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 35px;
-        @include md {
-            justify-content: start;
-            margin-bottom: 20px;
-        }
     }
 
     &__content {
@@ -75,6 +39,10 @@
         &--grid {
             width: calc(100% / 3 - 30px);
             margin: 15px 0 15px 30px;
+
+            @include active {
+                border-color: $green-500;
+            }
 
             @include lg {
                 width: calc(100% / 2 - 30px);
@@ -99,6 +67,7 @@
         &--list {
             width: calc(100% / 2 - 30px);
             margin: 15px 0 15px 30px;
+
             @include lg {
                 width: 80%;
                 margin: 15px auto;
@@ -108,25 +77,6 @@
                 width: 100%;
                 margin: 6px;
             }
-        }
-    }
-
-    .product-card {
-
-        &__image {
-            position: relative;
-        }
-
-        &__plus {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            @extend %flex;
-            align-items: center;
-        }
-
-        .promotion-card__stock {
-            margin-bottom: 0;
         }
     }
 
@@ -152,35 +102,51 @@
         }
     }
 
-    .promotion-card__inner {
-        @extend %flex;
-        align-items: baseline;
+    .product-card {
+        &__image {
+            position: relative;
+        }
+
+        &__plus {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            @extend %flex;
+            align-items: center;
+        }
+    }
+
+    .promotion-card {
+        &__inner {
+            @extend %flex;
+            align-items: baseline;
+        }
+
+        &__picture {
+            height: auto;
+        }
+
+        &__link {
+            max-width: 200px;
+            height: 150px;
+            margin-right: 12px;
+        }
+
+        &__info {
+            max-width: 100%;
+        }
+
+        &__name {
+            max-width: 210px;
+            width: 100%;
+        }
+
+        &__stock {
+            margin-bottom: 0;
+        }
     }
 
     .card__inner {
         @extend %flex;
-    }
-
-    .product-card__badges {
-        left: 12px;
-    }
-
-    .promotion-card__picture {
-        height: auto;
-    }
-
-    .promotion-card__link {
-        max-width: 200px;
-        height: 150px;
-        margin-right: 12px;
-    }
-
-    .promotion-card__info {
-        max-width: 100%;
-    }
-
-    .promotion-card__name {
-        max-width: 210px;
-        width: 100%;
     }
 }

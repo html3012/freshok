@@ -6,7 +6,9 @@
     padding: 24px 0;
     &__list {
         display: flex;
+       flex-wrap: wrap;
     }
+  
 
 
     &__item {

@@ -7,6 +7,9 @@
     border: 1px solid $silver;
     border-radius: 6px;
     position: relative;
+    @include active {
+        border-color: $green-500;
+    }
 
     &__link {
         max-width: 100px;
@@ -28,7 +31,8 @@
 
     &__picture {
         width: 100%;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__info {
@@ -130,7 +134,7 @@
         }
     }
 
-    &__bage {
+    &__badge {
         position: absolute;
         font-size: 10px;
         line-height: 1;

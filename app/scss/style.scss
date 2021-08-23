@@ -1,6 +1,5 @@
 @import "fonts";
 @import "reset";
-// @import "libs";
 @import "vars";
 @import "mixin";
 @import "global";
@@ -26,4 +25,6 @@
 @import "components/catalog/filter";
 @import "components/catalog/selects";
 @import "components/pagination";
-
+@import "components/product/product";
+@import "components/product/tabs";
+@import "components/product/interesting";

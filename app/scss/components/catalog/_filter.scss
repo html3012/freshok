@@ -1,36 +1,83 @@
 .filter {
-    width: 300px;
-
-    @include lg {
-        width: 260px;
-    }
-
+    background-color: $white;
+        
     @include md {
-        width: 300px;
+        overflow-y:  auto;
+        width: 75%;
+        height: calc(100vh - 128px);
+        transform: translateY(-200%);
+        position: absolute;
+        z-index: 12;
+        top: 128px;
     }
 
     @include sm {
-        max-width: 300px;
-        width: 100%;
+        width: 85%;
+    }
+
+    &--active {
+        transform: translateX(-6%);
+    }
+
+    &__items{
+        width: 300px;
+        overflow: auto;
+    
+        @include lg {
+            width: 260px;
+        }
+    
+        @include md {
+            width: 300px;
+            padding-left: 50px;
+        }
+    
+        @include sm {
+            max-width: 300px;
+            width: 100%;
+            padding-left: 15px;
+        }
+    
+        @include xs {
+            padding-left: 5px;
+        }
+    }
+    
+
+    &__close {
+        margin: 20px 20px 20px auto;
+        display: none;
+        background-color: transparent;
+
+        @include md {
+            display: block;
+        }
+    }
+
+    &__remove {
+        width: 18px;
+        height: 18px;
     }
 
     &__categories {
         width: 100%;
         background-color: $white;
         border: 1px solid $silver;
-
-        &:not(:last-child) {
-            margin-bottom: 30px;
-        }
+        margin-bottom: 30px;
 
         &--open {
-            .filter__content {
-                display: block;
+            .filter{
+                &__content {
+                    display: block;
+                }
             }
-
-            .filter__name::after {
-                transform: rotate(180deg);
+           
+            .filter__name {
+                &::after {
+                    transform: rotate(180deg);
+                }
             }
+           
         }
     }
 
@@ -45,7 +92,7 @@
         color: $black-900;
         text-align: left;
         position: relative;
-        
+
         &::after {
             content: url("../../../img/icons/arrow-up.svg");
             position: absolute;
@@ -65,8 +112,16 @@
     }
 
     &__item {
+
         &:not(:last-child) {
             margin-bottom: 12px;
+        }
+    }
+
+    &__link {
+        @include hovertext ($green);
+        &__active {
+            color: $green;
         }
     }
 
@@ -118,6 +173,7 @@
         text-align: center;
         align-items: center;
         line-height: 40px;
+        
         &:focus {
             box-shadow: 0px 0px 0px 3px $green-200;
         }
@@ -147,10 +203,14 @@
     }
 
     .irs--flat .irs-handle {
-        width: 8px;
-        height: 8px;
+        width: 18px;
+        height: 18px;
         background-color: $green;
         border-radius: 50%;
+    }
+
+    .irs--flat .irs-handle {
+        top: 17px;
     }
 
     .irs--flat .irs-handle > i:first-child {

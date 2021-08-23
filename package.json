@@ -30,5 +30,9 @@
     "rateyo": "^2.3.5",
     "sass": "^1.35.2",
     "slick-carousel": "^1.8.1"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "fancybox": "^3.0.1"
   }
 }

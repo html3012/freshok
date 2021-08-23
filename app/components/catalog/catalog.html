@@ -2,7 +2,7 @@
     <div class="container">
 
         <h1 class="sr-only">
-            Фрешок - всегда свежие продукти.
+            Фрешок - всегда свежие продукты.
         </h1>
 
         <h2 class="catalog__title">
@@ -10,15 +10,16 @@
         </h2>
 
         <div class="catalog__inner">
-            <aside class="catalog__filters">
-                <button class="catalog__close">
-                    <svg class="catalog__remove">
+
+            <aside class="catalog__filters filter">
+                <button class="filter__close">
+                    <span class="sr-only">Закрыть фильтр</span>
+                    <svg class="filter__remove">
                         <use xlink:href="img/sprite.svg#remove-btn"></use>
                     </svg>
                 </button>
 
-                <ul class="catalog__filter filter">
-
+                <ul class="filter__items">
                     <li class="filter__categories filter__categories--open">
                         <button class="filter__name" type="button">
                             Категории
@@ -29,56 +30,49 @@
                                     Овощи и фрукты
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Бакалея
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Молочные продукты
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Хлеб
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Мясо
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Колбаса
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Рыба
                                 </a>
                             </li>
+
                             <li class="filter__item">
                                 <a class="filter__link" href="#">
                                     Алкоголь
                                 </a>
                             </li>
-                            <li class="filter__item">
-                                <a class="filter__link" href="#">
-                                    Напитки
-                                </a>
-                            </li>
-                            <li class="filter__item">
-                                <a class="filter__link" href="#">
-                                    Торты
-                                </a>
-                            </li>
-                            <li class="filter__item">
-                                <a class="filter__link" href="#">
-                                    Чай, кофе
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
 
@@ -89,7 +83,6 @@
                         <ul class="filter__content">
 
                             <li class="filter__item">
-                                <form class="filter__form" action=""></form>
                                 <label class="filter__box" for="discount">
                                     <input class="filter__input" id="discount" name="discount" type="checkbox"
                                         value="discount">
@@ -121,57 +114,45 @@
                         <ul class="filter__content">
 
                             <li class="filter__item">
-                                <form class="filter__form"></form>
                                 <label class="filter__box" for="coca">
                                     <input class="filter__input" id="coca" name="brand" type="checkbox">
                                     <span class="filter__checkbox"></span>CocaCola
-                                    </form>
                                 </label>
                             </li>
 
                             <li class="filter__item">
-                                <form class="filter__form">
-                                    <label class="filter__box" for="pepsi">
-                                        <input class="filter__input" id="pepsi" name="brand" type="checkbox">
-                                        <span class="filter__checkbox"></span>Pepsi
-                                    </label>
-                                </form>
+                                <label class="filter__box" for="pepsi">
+                                    <input class="filter__input" id="pepsi" name="brand" type="checkbox">
+                                    <span class="filter__checkbox"></span>Pepsi
+                                </label>
                             </li>
 
                             <li class="filter__item">
-                                <form class="filter__form">
-                                    <label class="filter__box" for="sprite">
-                                        <input class="filter__input" id="sprite" name="brand" type="checkbox">
-                                        <span class="filter__checkbox"></span>Sprite
-                                    </label>
-                                </form>
+                                <label class="filter__box" for="sprite">
+                                    <input class="filter__input" id="sprite" name="brand" type="checkbox">
+                                    <span class="filter__checkbox"></span>Sprite
+                                </label>
                             </li>
 
                             <li class="filter__item">
-                                <form class="filter__form">
-                                    <label class="filter__box" for="fanta">
-                                        <input class="filter__input" id="fanta" name="brand" type="checkbox">
-                                        <span class="filter__checkbox"></span>Fanta
-                                    </label>
-                                </form>
+                                <label class="filter__box" for="fanta">
+                                    <input class="filter__input" id="fanta" name="brand" type="checkbox">
+                                    <span class="filter__checkbox"></span>Fanta
+                                </label>
                             </li>
 
                             <li class="filter__item">
-                                <form class="filter__form">
-                                    <label class="filter__box" for="rb">
-                                        <input class="filter__input" id="rb" name="brand" type="checkbox">
-                                        <span class="filter__checkbox"></span>RedBull
-                                    </label>
-                                </form>
+                                <label class="filter__box" for="rb">
+                                    <input class="filter__input" id="rb" name="brand" type="checkbox">
+                                    <span class="filter__checkbox"></span>RedBull
+                                </label>
                             </li>
 
                             <li class="filter__item">
-                                <form class="filter__form">
-                                    <label class="filter__box" for="drpep">
-                                        <input class="filter__input" id="drpep" name="brand" type="checkbox">
-                                        <span class="filter__checkbox"></span>Dr Pepper
-                                    </label>
-                                </form>
+                                <label class="filter__box" for="drpep">
+                                    <input class="filter__input" id="drpep" name="brand" type="checkbox">
+                                    <span class="filter__checkbox"></span>Dr Pepper
+                                </label>
                             </li>
                         </ul>
                     </li>
@@ -199,7 +180,6 @@
                                         name="my_range" data-min="0" data-max="1200" data-from="100" data-to="1000" />
                                 </form>
                             </li>
-
                         </ul>
                     </li>
 
@@ -207,10 +187,11 @@
             </aside>
 
             <div class="catalog__products">
-                <ul class="catalog__selects selects">
 
+                <ul class="catalog__selects selects">
                     <li class="selects__item">
                         <button class="selects__btn selects__btn--filter " type="button">
+                            <span class="sr-only">Открыть фильтр</span>
                             <svg class="selects__img selects__img--filter">
                                 <use xlink:href="img/sprite.svg#ic-filter"></use>
                             </svg>
@@ -218,33 +199,30 @@
                     </li>
 
                     <li class="selects__item">
-                        <form class="select__form">
                             <label class="sr-only" for="name"></label>
                             <select class="selects__select" name="name" id="name">
-                                <option value="">По названию</option>
-                                <option value="">По популярности</option>
-                                <option value="">Сначала дешевые</option>
-                                <option value="">Сначала дорогие</option>
-                                <option value="">По алфавиту</option>
+                                <option value="name">По названию</option>
+                                <option value="popular">По популярности</option>
+                                <option value="cheap">Сначала дешевые</option>
+                                <option value="expensive">Сначала дорогие</option>
+                                <option value="abc">По алфавиту</option>
                             </select>
-                        </form>
                     </li>
 
                     <li class="selects__item">
-                        <form class="selects__form">
                             <label class="sr-only" for="num"></label>
                             <select class="selects__select" name="num" id="num">
-                                <option value="">по 12</option>
-                                <option value="">по 18</option>
-                                <option value="">по 24</option>
-                                <option value="">по 30</option>
-                                <option value="">по 36</option>
+                                <option value="12">по 12</option>
+                                <option value="18">по 18</option>
+                                <option value="24">по 24</option>
+                                <option value="30">по 30</option>
+                                <option value="36">по 36</option>
                             </select>
-                        </form>
                     </li>
 
                     <li class="selects__item">
                         <button class="selects__btn btn-list" type="button" data-filter=".category-list">
+                            <span class="sr-only">Выбрать розкладку</span>
                             <svg class="selects__img selects__img--list">
                                 <use xlink:href="img/sprite.svg#btn-list"></use>
                             </svg>
@@ -254,6 +232,7 @@
                     <li class="selects__item">
                         <button class="selects__btn btn-grid selects__btn--active" type="button"
                             data-filter=".category-grid">
+                            <span class="sr-only">Выбрать розкладку</span>
                             <svg class="selects__img selects__img--grid">
                                 <use xlink:href="img/sprite.svg#btn-grid"></use>
                             </svg>
@@ -288,7 +267,8 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/pineapple.jpg" alt="ананас">
+                                <img class="product-card__img" src="img/cards/pineapple.jpg" width="298" height="215"
+                                    alt="ананас">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
                                         <span class="promotion-card__stock promotion-card__stock--is">В
@@ -350,7 +330,8 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/lemon.jpg" alt="лимон">
+                                <img class="product-card__img" src="img/cards/lemon.jpg" width="298" height="215"
+                                    alt="лимон">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
                                         <span class="promotion-card__stock promotion-card__stock--is">В
@@ -410,7 +391,7 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/pitaya.jpg"
+                                <img class="product-card__img" src="img/cards/pitaya.jpg" width="298" height="215"
                                     alt="Питахайя красная с белой мякотью">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
@@ -471,7 +452,8 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/carrot.jpg" alt="Морковь молодая">
+                                <img class="product-card__img" src="img/cards/carrot.jpg" width="298" height="215"
+                                    alt="Морковь молодая">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
                                         <span class="promotion-card__stock ">В
@@ -531,7 +513,7 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/juice.jpg"
+                                <img class="product-card__img" src="img/cards/juice.jpg" width="298" height="215"
                                     alt="Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
@@ -595,7 +577,7 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/coffee.jpg"
+                                <img class="product-card__img" src="img/cards/coffee.jpg" width="298" height="215"
                                     alt="Кофе с коноплей органический Caffé Salomoni 250г">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
@@ -657,7 +639,8 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/pepper.jpg" alt="Перец оранжевый">
+                                <img class="product-card__img" src="img/cards/pepper.jpg" width="298" height="215"
+                                    alt="Перец оранжевый">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
                                         <span class="promotion-card__stock ">В
@@ -718,7 +701,7 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/ketchup.jpg"
+                                <img class="product-card__img" src="img/cards/ketchup.jpg" width="298" height="215"
                                     alt="Кетчуп томатный детский органический Bio-Zentrale">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
@@ -779,7 +762,8 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/pineapple.jpg" alt="ананас">
+                                <img class="product-card__img" src="img/cards/pineapple.jpg" width="298" height="215"
+                                    alt="ананас">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
                                         <span class="promotion-card__stock ">В
@@ -842,7 +826,8 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/carrot.jpg" alt="Морковь молодая">
+                                <img class="product-card__img" src="img/cards/carrot.jpg" width="298" height="215"
+                                    alt="Морковь молодая">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
                                         <span class="promotion-card__stock ">В
@@ -904,7 +889,7 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/juice.jpg"
+                                <img class="product-card__img" src="img/cards/juice.jpg" width="298" height="215"
                                     alt="Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
@@ -968,7 +953,7 @@
                                 </button>
                             </div>
                             <a class="product-card__image" href="#">
-                                <img class="product-card__img" src="img/cards/coffee.jpg"
+                                <img class="product-card__img" src="img/cards/coffee.jpg" width="298" height="215"
                                     alt="Кофе с коноплей органический Caffé Salomoni 250г">
                                 <div class="product-card__plus">
                                     <div class="promotin-card__wrap">
@@ -1022,7 +1007,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="img/cards/pineapple.jpg" alt="ананас">
                             </a>
                             <div class="promotion-card__info">
@@ -1085,7 +1070,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/lemon.jpg" alt="лимон">
                             </a>
                             <div class="promotion-card__info">
@@ -1148,7 +1133,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/pitaya.jpg" alt="Питахайя красная с белой мякотью">
                             </a>
                             <div class="promotion-card__info">
@@ -1211,7 +1196,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/carrot.jpg" alt="Морковь молодая с бабушкиной грядки, 1кг">
                             </a>
                             <div class="promotion-card__info">
@@ -1273,7 +1258,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/juice.jpg"
                                     alt="Напиток сокосодержащий Sanpellegrino Aranciata">
                             </a>
@@ -1337,7 +1322,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/pepper.jpg" alt="Перец оранжевый, 1кг">
                             </a>
                             <div class="promotion-card__info">
@@ -1399,7 +1384,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/ketchup.jpg"
                                     alt="Кетчуп томатный детский органический Bio-Zentrale">
                             </a>
@@ -1463,7 +1448,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="img/cards/pineapple.jpg" alt="ананас">
                             </a>
                             <div class="promotion-card__info">
@@ -1526,7 +1511,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="img/cards/pineapple.jpg" alt="ананас">
                             </a>
                             <div class="promotion-card__info">
@@ -1588,7 +1573,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/lemon.jpg" alt="лимон">
                             </a>
                             <div class="promotion-card__info">
@@ -1650,7 +1635,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/pitaya.jpg" alt="Питахайя красная с белой мякотью">
                             </a>
                             <div class="promotion-card__info">
@@ -1712,7 +1697,7 @@
                                 </span>
                             </div>
                             <a class="promotion-card__link" href="#">
-                                <img class="promotion-card__picture" width="100px" height="100px"
+                                <img class="promotion-card__picture" width="100" height="100"
                                     src="../../img/cards/carrot.jpg" alt="Морковь молодая с бабушкиной грядки, 1кг">
                             </a>
                             <div class="promotion-card__info">
@@ -1812,14 +1797,10 @@
                                 </svg>
                             </a>
                         </li>
-
                     </ul>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-   
+
 </section>
